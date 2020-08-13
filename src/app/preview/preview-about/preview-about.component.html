@@ -1,0 +1,53 @@
+<div class="preview-page mat-typography" *ngIf="post">
+  <!--  <div class="video-placeholder">
+      <video autoplay muted loop id="myVideo">
+        <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+      </video>
+    </div>-->
+  <div class="img-cover">
+<!--    <span class="small-title">Resmi Poster</span>-->
+    <img [src]="post.poster">
+  </div>
+
+  <div class="post-info">
+    <h1> {{post.title}} </h1>
+
+<!--
+    <div class="ratings">
+      <span class="small-title">Imdb</span>
+      <span class="rt">8.5</span>
+    </div>
+
+    <div class="ratings">
+      <span class="small-title">Rotten Tomatoes</span>
+      <span class="rt">97%</span>
+    </div>
+-->
+
+  <!--  <div class="rated">
+      <span>TV-14</span>
+    </div>-->
+
+    <div class="plot">
+    <!--  <span class="small-title">Özet</span>-->
+      <p class="summary"> {{post.summary}} </p>
+    </div>
+
+    <div class="released-year">
+      <span class="small-title">Çıkış yılı</span>
+      <span>{{post.releaseDate}}</span>
+    </div>
+
+    <div class="time">
+      <span class="small-title">Süre</span>
+      <span>1 saat 4 dakika</span>
+    </div>
+
+    <span class="small-title chip-small-title">Kategoriler</span>
+    <mat-chip-list *ngIf="post">
+      <mat-chip *ngFor="let genre of post.genres">
+        {{genre.title}}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<h2 matDialogTitle>Yeni parti odası</h2>
+<div matDialogContent>
+  <form spellcheck="false" autocomplete="off">
+    <mat-form-field>
+      <mat-label>Başlık</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Açıklama</mat-label>
+      <textarea matInput matTextareaAutosize [matAutosizeMinRows]="1"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Gizlilik</mat-label>
+      <mat-select [(value)]="selected" disableOptionCentering>
+        <mat-option value="option1">Genel</mat-option>
+        <mat-option value="option2">Gizli</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+<div matDialogActions align="end">
+  <button mat-button>İPTAL</button>
+  <button mat-button color="primary">OLUŞTUR</button>
+</div>

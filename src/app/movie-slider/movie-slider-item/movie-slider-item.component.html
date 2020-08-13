@@ -1,0 +1,13 @@
+<div class="movie-item">
+  <div class="thumb-renderer">
+    <div class="img-placeholder">
+      <img [attr.data-src]="movie.poster" alt="" class="lazy2">
+    </div>
+  </div>
+  <div class="details">
+    <a [routerLink]="['/title', movie.id]">
+      <div class="title">{{movie.title}}</div>
+    </a>
+    <div class="subtitle">{{movie.releaseDate}}</div>
+  </div>
+</div>

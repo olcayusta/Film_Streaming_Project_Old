@@ -1,0 +1,23 @@
+<ng-container *ngIf="post">
+
+  <mat-toolbar>
+    <button mat-icon-button>
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>Young Adult</span>
+  </mat-toolbar>
+
+  <div class="header-container">
+    <img class="hero-img" [src]="post.heroImg" alt="">
+  </div>
+
+  <h1>{{post.title}}</h1>
+
+  <mat-tab-group lang="tr">
+    <mat-tab label="HAKKINDA"></mat-tab>
+    <mat-tab label="FİLM"></mat-tab>
+    <mat-tab label="OYUNCULAR"></mat-tab>
+    <mat-tab label="SON HABERLER"></mat-tab>
+  </mat-tab-group>
+
+</ng-container>

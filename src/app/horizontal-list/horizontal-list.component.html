@@ -1,0 +1,16 @@
+<div class="browse">
+  <div class="horizontal-list list">
+    <div class="list-header">
+      <h2 class="list-title">SAMURAI JACK</h2>
+    </div>
+    <div class="horizontal-list-viewport">
+      <div class="horizontal-list-items">
+        <div class="list-item" *ngFor="let img of images">
+          <div class="list-item-thumb">
+            <div class="video-thumb" [style.backgroundImage]="'url(' + img + ')'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

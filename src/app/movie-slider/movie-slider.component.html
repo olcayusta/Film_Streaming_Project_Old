@@ -1,0 +1,11 @@
+<div class="list-header">
+  <div class="list-header-text">
+    <h2 class="section-title" lang="tr">Filmler</h2>
+  </div>
+</div>
+
+<div class="movies" id="movies">
+  <div class="layout-movie-slider" [style.transform]="transform" (cdkObserveContent)="observed()">
+    <app-movie-slider-item [movie]="movie" *ngFor="let movie of movies"></app-movie-slider-item>
+  </div>
+</div>

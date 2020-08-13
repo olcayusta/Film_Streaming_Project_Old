@@ -1,0 +1,24 @@
+@media (max-width: 360px) {
+  .layout-movie-slider {
+    padding-left: 16px;
+  }
+}
+
+/*
+  Movie slider
+*/
+.movies {
+  overflow: hidden;
+}
+
+.layout-movie-slider {
+  display: flex;
+  margin-bottom: 48px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+}
+
+.layout-movie-slider::-webkit-scrollbar {
+  display: none;
+}
+

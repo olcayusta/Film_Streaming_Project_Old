@@ -1,0 +1,37 @@
+<div class="seasons-content">
+
+<!--  <mat-form-field appearance="outline">
+    <mat-label>Sezon</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option value="option1">1.Sezon</mat-option>
+      <mat-option value="option2">2.Sezon</mat-option>
+      <mat-option value="option3">3.Sezon</mat-option>
+    </mat-select>
+  </mat-form-field>-->
+
+  <div class="app-list-header">
+    <h2 class="comp-list-title">Son bölümler</h2>
+    <div class="app-horizontal-list-controls">
+      <button mat-icon-button disabled matTooltip="Back">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="Forward">
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="episodes">
+    <div class="list-item video episode" *ngFor="let episode of episodes; let index = index">
+      <div class="img-background app-hover">
+        <img [src]="episode.thumbImg" alt="">
+      </div>
+      <div class="episode-info">
+        <div class="details two-row">
+          <a class="title" [routerLink]="['/watch']">{{episode.title}}</a>
+          <div class="subtitle">S1 B{{index + 1}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

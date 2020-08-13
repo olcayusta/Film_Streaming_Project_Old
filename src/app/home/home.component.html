@@ -1,0 +1,237 @@
+<!--<mat-toolbar class="home-toolbar mat-elevation-z4">
+  <mat-tab-group mat-align-tabs="center" lang="tr">
+    <mat-tab label="Ana sayfa"></mat-tab>
+    <mat-tab label="Filmler"></mat-tab>
+    <mat-tab label="Tv şovları"></mat-tab>
+    <mat-tab label="Partiler" routerLink="rooms"></mat-tab>
+  </mat-tab-group>
+</mat-toolbar>-->
+<div class="wrapper">
+  <!--
+    <video id="video1" controls width="640">
+      <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4">
+    </video>
+  -->
+
+  <!--  <div>
+      <button mat-raised-button>New Releases</button>
+    </div>-->
+
+  <!--<app-horizontal-list></app-horizontal-list>-->
+
+  <!--
+    <mat-chip-list>
+      <mat-chip>#YILBAŞI FİLMLERİ</mat-chip>
+  &lt;!&ndash;    <mat-chip>#FİLMLER</mat-chip>
+      <mat-chip>#TV ŞOVLARI</mat-chip>
+      <mat-chip>#PARTİLER</mat-chip>&ndash;&gt;
+    </mat-chip-list>
+  -->
+
+<!--  <div class="hero-big">
+    <img src="https://assets.epix.com/b5e371c375d77f81457d4ad2ebf0ed5d.jpg" alt="">
+    <div class="hero-gradient"></div>
+  </div>-->
+
+  <app-continue-watching-slider></app-continue-watching-slider>
+
+  <!--<app-watch-fullseries></app-watch-fullseries>-->
+
+  <!-- Movie Posters -->
+  <app-horizontal-slider></app-horizontal-slider>
+
+  <!-- Animasyon Films -->
+  <!--  <div class="list-header">
+      <div class="list-header-text">
+        <h2 class="big-title">Nostalji & 90'lar</h2>
+      </div>
+      <div class="button-group">
+        <button mat-icon-button matTooltip="Önceki" (click)="back()">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Sonraki" (click)="forward()">
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="movies-wrapper" *ngIf="animations">
+      <div class="movies">
+        <div class="slider" [style.transform]="transform">
+          <div class="movie-item" *ngFor="let item of animations">
+            <div class="movie-poster-background" matRipple>
+              <img [src]="item.poster">
+            </div>
+            <div class="movie-item-info">
+              <div class="movie-title">
+                <a [routerLink]="['/title', item.id]">{{item.title}}</a>
+              </div>
+              <span class="subtitle">{{item.releaseDate}}</span>
+              <mat-menu #moreButtonMenu="matMenu">
+                <button mat-menu-item>Fragman izle</button>
+                <button mat-menu-item>Daha sonra izleye ekle</button>
+              </mat-menu>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+  <!--  <div class="list-header">
+      <div class="list-header-text">
+        <span class="list-title-description">DAHA FAZLA</span>
+        <h2 lang="tr" class="list-title">Disney yapımı animasyon</h2>
+      </div>
+      <div class="button-group">
+        <button mat-icon-button matTooltip="Önceki" (click)="back()">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Sonraki" (click)="forward()">
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="movies-wrapper">
+      <div class="movies" [style.transform]="transform" id="movies2">
+        <div class="movie-item">
+          <div class="movie-poster-background">
+            <img src="//localhost:4000/static/poster/shrek.jpg">
+            <button mat-fab class="play-button">
+              <mat-icon>play_arrow</mat-icon>
+            </button>
+          </div>
+          <div class="movie-item-info">
+            <div class="movie-title">Shrek</div>
+            <span class="subtitle">2018</span>
+          </div>
+        </div>
+        <div class="movie-item">
+          <div class="movie-poster-background">
+            <img src="//localhost:4000/static/poster/sevimlicanavarlar.jpg" alt="">
+          </div>
+          <div class="movie-item-info">
+            <span class="movie-title">Monsters</span>
+            <span class="subtitle">2018</span>
+          </div>
+        </div>
+        <div class="movie-item">
+          <img src="//localhost:4000/static/poster/iceage.jpg" alt="">
+          <div class="movie-item-info">
+            <span class="movie-title">Buz Devri</span>
+            <span class="subtitle">2018</span>
+          </div>
+        </div>
+        <div class="movie-item">
+          <img src="//localhost:4000/static/poster/ferdinand.jpg" alt="">
+          <div class="movie-item-info">
+            <span class="movie-title">Ferdinand</span>
+            <span class="subtitle">TV-14 - 2017</span>
+          </div>
+        </div>
+        <div class="movie-item">
+          <img src="//localhost:4000/static/poster/madagaskar.jpg" alt="">
+          <div class="movie-item-info">
+            <span class="movie-title">Madagaskar</span>
+            <span class="subtitle">2017</span>
+          </div>
+        </div>
+        <div class="movie-item">
+          <img src="//localhost:4000/static/poster/kungfupanda.jpg" alt="">
+          <div class="movie-item-info">
+            <span class="movie-title">Kung Fu Panda</span>
+            <span class="subtitle">2018</span>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+  <app-movie-slider></app-movie-slider>
+
+  <div class="list-header">
+    <div class="list-header-text">
+      <h2 class="section-title" lang="tr">Tavsiye edilen diziler</h2>
+    </div>
+    <div class="button-group">
+      <button mat-icon-button matTooltip="Önceki" (click)="back()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="Sonraki" (click)="forward()">
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Continue Watching -->
+  <div class="layout-slider" *ngIf="recommendedShows">
+    <div class="layout-content">
+      <div class="layout-item" *ngFor="let continueItem of recommendedShows; let index = index;">
+        <a class="continue-item-renderer" (click)="launchRipple($event, index)">
+          <div class="img-renderer">
+            <img class="layout-img" [src]="continueItem.img">
+          </div>
+          <div class="paper-ripple" matRipple #matRipple></div>
+          <!--    <div class="item-overlay-renderer">
+                <div class="play-button-wrapper">
+                  <button mat-icon-button class="play-button" (click)="$event.stopPropagation()">
+                    <mat-icon>play_arrow</mat-icon>
+                  </button>
+                </div>
+                <button mat-icon-button class="menu-button" [matMenuTriggerFor]="continueMoreMenu" (click)="$event.stopPropagation()">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+              </div>-->
+        </a>
+        <div class="details">
+          <div class="title">{{continueItem.title}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tavsiye edilen animasyonlar -->
+<!--  <div class="list-header">
+    <div class="list-header-text">
+      <h2 class="section-title" lang="tr">Tavsiye edilen animasyonlar</h2>
+    </div>
+    <div class="button-group">
+      <button mat-icon-button matTooltip="Önceki" (click)="back()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="Sonraki" (click)="forward()">
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="layout-slider" *ngIf="recommendedAnimations">
+    <div class="layout-content">
+      <div class="layout-item" *ngFor="let item of recommendedAnimations; let index = index;">
+        <a class="continue-item-renderer">
+          <div class="img-renderer">
+            <img class="layout-img" [src]="item.img" [alt]="item.title">
+          </div>
+        </a>
+        <div class="details">
+          <div class="title">{{item.title}}</div>
+        </div>
+      </div>
+    </div>
+  </div>-->
+
+</div>
+
+<mat-menu #moreMenu="matMenu">
+  <button mat-menu-item (click)="watchLater()">Daha sonra izle'ye ekle</button>
+  <button mat-menu-item>Görmek istemiyorum</button>
+</mat-menu>
+
+
+<mat-menu #continueMoreMenu="matMenu">
+  <button mat-menu-item (click)="watchLater()">
+    <mat-icon>watch_later</mat-icon>
+    <span>Daha sonra izle listesine ekle</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>remove_circle_outline</mat-icon>
+    <span>İzleme listesinden kaldır</span>
+  </button>
+</mat-menu>

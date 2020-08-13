@@ -1,0 +1,53 @@
+.grid-renderer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 24px;
+}
+
+.people {
+  cursor: pointer;
+  padding: 16px;
+}
+
+.selected {
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.image {
+  width: 100%;
+  display: flex;
+  border-radius: 50%;
+}
+
+.image-wrapper {
+  position: relative;
+  margin: 0 0 16px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.title {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.overlay-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,.5);
+
+  .check-icon {
+    color: #fff;
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+  }
+}

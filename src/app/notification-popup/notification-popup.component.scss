@@ -1,0 +1,30 @@
+.notification-popup {
+  width: 480px;
+  height: 440px;
+  // background-color: var(--yt-dialog-background);
+  background-color: #fff;
+}
+
+.notification-popup-list {
+  // background-color: #fff;
+
+  .mat-list-item mat-icon {
+    color: rgba(0,0,0,.54);
+  }
+}
+
+.notification-popup-header {
+  // background-color: var(--yt-simple-menu-header-background);
+  background-color: #fff;
+  color: var(--primary-text-color);
+  height: 56px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.notification-popup-header-title {
+  font-size: 16px;
+  font-weight: 500;
+}

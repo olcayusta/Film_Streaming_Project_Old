@@ -1,0 +1,44 @@
+<div class="profile-avatar-menu mat-elevation-z10">
+  <header class="profile-menu-header">
+    <img class="profile-menu-header-image" src="https://i.pinimg.com/564x/d6/66/27/d66627ef898ebee0be85cdf2de1c6bdd.jpg" alt="Olcay Usta">
+    <div class="profile-menu-header-text">
+      <div class="display-name">olcayusta</div>
+      <div class="email">olcayustaweb@yandex.com</div>
+    </div>
+  </header>
+  <div class="container">
+    <mat-nav-list>
+      <a mat-list-item>
+        <mat-icon>account_box</mat-icon>
+        <span>Profilim</span>
+      </a>
+      <a mat-list-item (click)="openAccountDialog()">
+        <mat-icon>supervisor_account</mat-icon>
+        <span>Hesap değiştir</span>
+      </a>
+      <a mat-list-item (click)="exitToApp()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Oturumu kapat</span>
+      </a>
+    </mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-nav-list class="profile-avatar-menu-list">
+      <a mat-list-item>
+        <mat-icon>color_lens</mat-icon>
+        <span>Koyu tema: Kapalı</span>
+      </a>
+      <a mat-list-item routerLink="settings">
+        <mat-icon>settings</mat-icon>
+        <span>Ayarlar</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon>help</mat-icon>
+        <span>Yardım</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon>feedback</mat-icon>
+        <span>Geri bildirim gönder</span>
+      </a>
+    </mat-nav-list>
+  </div>
+</div>

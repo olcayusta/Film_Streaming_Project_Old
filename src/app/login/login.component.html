@@ -1,0 +1,37 @@
+<div class="login-page-center">
+  <form class="login-form" spellcheck="false">
+    <h1>Oturum aç</h1>
+    <p>Eposta adresinizi kullanın</p>
+
+    <ng-container *ngIf="!usernameOk">
+      <mat-form-field appearance="outline">
+        <mat-label>Kullanıcı adı</mat-label>
+        <input type="email" matInput [formControl]="username">
+        <mat-error *ngIf="username.hasError('required')">Lütfen kullanıcı adını girin</mat-error>
+        <mat-error *ngIf="username.hasError('username_available')">Kullanıcı adı hatalı</mat-error>
+      </mat-form-field>
+
+      <div class="login-form-actions">
+        <button mat-raised-button color="primary" type="submit" (click)="submitUsername()">İLERİ</button>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="usernameOk">
+      <div class="avatar-placeholder">
+        <img src="https://i.pinimg.com/564x/78/6a/03/786a03de5809d7ddc63e0652c966fc9f.jpg" alt="">
+      </div>
+      <mat-form-field appearance="outline">
+        <mat-label>Şifre</mat-label>
+        <input type="password" matInput [formControl]="password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="password.hasError('user_available')">Password error!</mat-error>
+      </mat-form-field>
+      <div class="login-form-actions">
+        <button mat-raised-button color="primary" type="submit" (click)="submitPassword()">İLERİ</button>
+      </div>
+    </ng-container>
+
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<div class="notification-popup mat-elevation-z10">
+  <header class="notification-popup-header">
+    <span class="notification-popup-header-title">Bildirimler</span>
+  </header>
+  <div class="notification-popup-list">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let notification of notifications">
+        <img matListAvatar [src]="notification.img">
+        <h3 matLine>{{notification.author}}</h3>
+        <p matLine>
+          <span>Introducing a new wat to share</span>
+          <span class="demo-2"> -- 2 mins ago </span>
+        </p>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+</div>

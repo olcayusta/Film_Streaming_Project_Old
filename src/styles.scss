@@ -1,0 +1,364 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+/*$black-theme-primary: mat-palette($mat-gray, 900);
+$black-theme-accent:  mat-palette($mat-gray, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$black-theme-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$black-theme: mat-light-theme($black-theme-primary, $black-theme-accent, $black-theme-warn);
+
+.black-theme {
+  @include angular-material-theme($black-theme);
+}*/
+
+/*
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--black-transparent-20,rgba(0,0,0,0.2));
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  width: 12px;
+}
+*/
+
+$candy-app-primary-dark: mat-palette($mat-gray);
+$candy-app-accent-dark:  mat-palette($mat-gray, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$candy-app-warn-dark:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$candy-app-theme-dark: mat-dark-theme($candy-app-primary-dark, $candy-app-accent-dark, $candy-app-warn-dark);
+
+.dark-theme {
+
+  $sidenav-primary: mat-palette($mat-gray, 900);
+  $sidenav-accent:  mat-palette($mat-gray, 900);
+
+  $sidenav-dark: mat-dark-theme($sidenav-primary, $sidenav-accent);
+
+  @include angular-material-theme($candy-app-theme-dark);
+  @include mat-sidenav-theme($sidenav-dark);
+  // @include mat-menu-theme($candy-app-theme-dark);
+
+  $progress-primary: mat-palette($mat-red, 900);
+  $progress-accent:  mat-palette($mat-red, A200, A100, A400);
+
+  $progress-theme: mat-light-theme($progress-primary, $progress-accent);
+  @include mat-progress-bar-theme($progress-theme);
+
+}
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$candy-app-primary: mat-palette($mat-gray, 900);
+$candy-app-accent:  mat-palette($mat-gray, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$candy-app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($candy-app-theme);
+$progress-primary: mat-palette($mat-red, 900);
+$progress-accent:  mat-palette($mat-red, A200, A100, A400);
+
+$progress-theme: mat-light-theme($progress-primary, $progress-accent);
+@include mat-progress-bar-theme($progress-theme);
+
+.player-theme {
+  $slider-primary: mat-palette($mat-red, 900);
+  $slider-accent:  mat-palette($mat-red, A200, A100, A400);
+
+  $slider-theme: mat-light-theme($slider-primary, $slider-accent);
+  // @include angular-material-theme($candy-app-theme-dark);
+  @include mat-slider-theme($slider-theme);
+}
+
+/*$progress-primary: mat-palette($mat-deep-purple);
+$progress-accent:  mat-palette($mat-red, A200, A100, A400);
+
+$progress-theme: mat-light-theme($progress-primary, $progress-accent);
+@include mat-progress-bar-theme($progress-theme);
+@include mat-slider-theme($progress-theme)*/
+
+/*$button-primary: mat-palette($mat-deep-purple);
+$button-accent:  mat-palette($mat-deep-purple, A200, A100, A400);
+
+$button-theme: mat-light-theme($button-primary, $button-accent);
+@include mat-button-theme($button-theme)*/
+
+/*
+button[mat-button], button[mat-raised-button] {
+  letter-spacing: .08929em;
+}
+*/
+
+$sidenav-primary: mat-palette($mat-gray, 900);
+$sidenav-accent:  mat-palette($mat-gray, 900);
+
+// Define an alternate dark theme.
+$the-dark-theme: mat-dark-theme($sidenav-primary, $sidenav-accent);
+
+.the-dark-theme {
+  @include angular-material-theme($the-dark-theme);
+  $background: map-get($the-dark-theme, background);
+  background-color: mat-color($background, background);
+}
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: 'Rubik, Roboto',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+$input-typography: mat-typography-config(
+  $font-family: 'Rubik, Roboto',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+$menu-typography: mat-typography-config(
+  $font-family: 'Rubik, Roboto',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(14px, 24px, 500)
+);
+
+@include mat-toolbar-typography($custom-typography);
+@include mat-tooltip-typography($custom-typography);
+/*@include mat-select-typography($custom-typography);
+@include mat-option-typography($custom-typography);
+@include mat-form-field-typography($input-typography);
+@include mat-input-typography($input-typography);
+@include mat-form-field-outline-typography($input-typography);
+@include mat-menu-typography($menu-typography);*/
+
+:root {
+  --yt-simple-menu-header-background: #eee;
+  --yt-dialog-background: #fff;
+  --primary-text-color: rgba(0,0,0,.87);
+  --metadata-color: rgba(0,0,0,.54);
+  --icon-color: rgba(0,0,0,.54);
+  --searchbox-background: #f5f5f5;
+  --searchbox-legacy-button-icon-color: rgba(0,0,0,.54);
+  --layout-item-width: 250px;
+  --layout-item-gutter: 16px;
+  --searchbox-border-color: rgba(0, 0, 0, 0.12);
+
+
+/*  body::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #fff;
+    // border-left: 1px solid rgba(0,0,0,.12);
+    border-radius: 4px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    // background: #757575;
+    background: rgba(0,0,0,0.24);
+    border-radius: 4px;
+  }*/
+}
+
+:root .dark-theme {
+  --yt-simple-menu-header-background: #474747;
+  --yt-dialog-background: #242424;
+  --primary-text-color: rgba(255,255,255,.87);
+  --metadata-color: rgba(255,255,255,.54);
+  --icon-color: rgba(255,255,255,.54);
+  --searchbox-background: #303030;
+  --searchbox-legacy-button-icon-color: rgba(255,255,255,.54);
+  --searchbox-border-color: rgba(255, 255, 255, 0.12);
+
+  body::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #111;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: #474747;
+  }
+}
+
+mat-nav-list {
+  padding-bottom: 8px;
+}
+
+.center-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 64px);
+}
+
+mat-spinner {
+  width: 48px !important;
+  height: 48px !important;
+
+  svg {
+    width: 48px !important;
+    height: 48px !important;
+  }
+}
+
+* {
+  // box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Rubik, Roboto, sans-serif;
+  font-size: 14px;
+}
+
+@media (max-width: 360px) {
+  body {
+   // font-family: "Helvetica Neue", Helvetica, Arimo, sans-serif;
+  }
+}
+
+mat-sidenav-container {
+  min-height: 100vh;
+}
+
+mat-sidenav {
+  width: 320px;
+  min-height: 100vh;
+}
+
+@media (max-width: 360px) {
+  .fullscreen-dialog {
+    height: 100vh;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 719px) {
+  mat-sidenav {
+    width: 256px;
+  }
+}
+
+.app-title {
+  margin-left: 20px;
+}
+
+.video-loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.big-title {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 8px;
+
+  button {
+    mat-icon {
+      color: rgba(0,0,0,.54);
+    }
+  }
+}
+
+.section-title {
+/*  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin: 0;*/
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0;
+  padding: 10px 0;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .list-header {
+    padding: 0 16px 8px 16px;
+
+    button {
+      display: none;
+    }
+  }
+
+  .section-title {
+  }
+}
+
+@media (max-width: 640px) {
+  mat-tab-group {
+    display: none;
+  }
+
+  .continue-items-slider {
+    grid-template-columns: repeat(8, minmax(240px, 1fr));
+  }
+
+  .big-title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("assets/fonts/helvetica.woff");
+}
+
+.mat-select-panel {
+  padding: 8px 0 !important;
+
+  mat-option {
+    height: 48px !important;
+    line-height: 48px !important;
+  }
+}
+
+@font-face {
+  font-family: 'Arial Nova';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Arial Nova'), url('assets/fonts/ArialNova.woff') format('woff');
+}

@@ -1,0 +1,25 @@
+:host {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 64px;
+    margin: 0;
+  }
+
+  .error-text {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 16px 0;
+  }
+}

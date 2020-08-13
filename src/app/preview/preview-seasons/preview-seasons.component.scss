@@ -1,0 +1,114 @@
+.seasons-content {
+  padding: 64px 0;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+.app-list-header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.comp-list-title {
+  font-size: 24px;
+  line-height: 32px;
+  margin: 16px 0;
+}
+
+.app-horizontal-list-controls {
+
+}
+
+.episodes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 80px 24px;
+  padding-bottom: 200px;
+
+  .app-hover {
+    cursor: pointer;
+    transition: opacity .15s linear;
+  }
+
+  .app-hover:hover {
+    opacity: .8;
+  }
+
+  .img-background {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .play-button {
+      position: absolute;
+
+      mat-icon {
+        color: #fff;
+      }
+    }
+  }
+
+  .img-background:hover {
+    background-color: red;
+  }
+
+  img {
+    width: 100%;
+    display: flex;
+    // width: 360px;
+  }
+}
+
+.buttons {
+  display: flex;
+  margin: 24px;
+
+  button {
+    margin-right: 16px;
+  }
+}
+
+.episode-info {
+  position: relative;
+  margin-top: 12px;
+}
+
+.details .two-row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.details .title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.details a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.details .subtitle {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  color: var(--metadata-color);
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.season-number {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.episode-no {
+  color: var(--metadata-color);
+}

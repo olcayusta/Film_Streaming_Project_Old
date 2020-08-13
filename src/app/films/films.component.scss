@@ -1,0 +1,152 @@
+.films-wrapper {
+  box-sizing: content-box;
+}
+
+@media (min-width: 1600px) {
+  .films-wrapper {
+    max-width: 100rem;
+    margin: 128px auto;
+    padding: 24px 72px;
+  }
+}
+
+.select-search {
+  height: 48px;
+  font-size: 14px;
+  padding-left: 16px !important;
+  border-bottom: 1px solid rgba(0,0,0,.12) !important;
+}
+
+#header {
+  padding: 24px 0 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .header-right {
+    position: absolute;
+    right: 0;
+  }
+
+}
+
+.section-header {
+  font-size: 48px;
+  line-height: 48px;
+  margin: 0 0 2px 0;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 64px 4px;
+}
+
+@media (min-width: 600px) and (max-width: 719px) {
+  .films-wrapper {
+    padding: 0 16px;
+  }
+
+  .items {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 64px 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .films-wrapper {
+    padding: 0 16px;
+    margin-top: 104px;
+  }
+
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 64px 8px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1599px) {
+  .items {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.simple-endpoint {
+  display: block;
+  position: relative;
+  padding-top: 150%;
+  cursor: pointer;
+}
+
+.img-placeholder {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 200ms cubic-bezier(.4,.0,.2,1);
+}
+
+.lazy {
+  opacity: 0;
+}
+
+.background-overlay-renderer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(0,0,0,0.502),rgba(0,0,0,0),rgba(0,0,0,0));
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.img-overlay-renderer:hover .background-overlay-renderer {
+  opacity: 1;
+}
+
+.img-overlay-renderer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  padding-top: 12px;
+
+  .title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -.5px;
+  }
+
+  .subtitle {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 4px;
+    color: var(--metadata-color);
+  }
+}
+
+.layout-item {
+
+}

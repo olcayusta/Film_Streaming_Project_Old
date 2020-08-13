@@ -1,0 +1,15 @@
+<h2 matDialogTitle>Hesap değiştir</h2>
+<div matDialogContent>
+  <div class="grid-renderer">
+    <div class="people" matRipple *ngFor="let account of accounts; let index = index" (click)="selectedIndex = index" [class.selected]="selectedIndex === index">
+      <div class="image-wrapper">
+        <img class="image" [src]="account.image">
+      </div>
+      <div class="title">{{account.title}}</div>
+    </div>
+  </div>
+</div>
+<div matDialogActions align="end">
+  <button mat-button>HESAP EKLE</button>
+  <button mat-button color="primary">BİTTİ</button>
+</div>

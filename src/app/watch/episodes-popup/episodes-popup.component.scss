@@ -1,0 +1,126 @@
+app-episodes-popup {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-toolbar {
+  display: none !important;
+}
+
+.list-wrapper::-webkit-scrollbar {
+  width: 12px;
+}
+
+.list-wrapper::-webkit-scrollbar-track {
+}
+
+.list-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.48);
+}
+
+.settings-popup {
+  min-width: 364px;
+  background-color: #151515;
+  // border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 204px);
+
+  .setting-popup-header {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    flex: none;
+    z-index: 1;
+
+    div.selector {
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      height: 64px;
+      width: 100%;
+      cursor: pointer;
+
+      span {
+        flex: 1;
+        color: #000;
+      }
+    }
+
+    mat-form-field {
+      width: 364px;
+      padding: 0 24px;
+      font-size: 14px;
+
+      .mat-form-field-underline {
+        // background-color: #fff;
+      }
+    }
+  }
+
+  .list-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-height: 576px;
+    overflow: auto;
+  }
+
+  mat-progress-bar {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .episode-item img {
+    width: 100px;
+  }
+
+}
+
+.grid-list {
+  width: 364px;
+  // padding: 16px;
+
+  .item {
+    margin: 0 24px 24px 24px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .tile {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: .25px;
+    .title {
+      // font-weight: 500;
+    }
+  }
+
+  mat-progress-bar {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.image-aspect-ratio {
+  padding-top: 56.25%;
+  position: relative;
+  opacity: .5;
+
+  img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.episode-menu {
+  width: 100vw;
+  margin: 0 24px;
+}
+
+.testing {
+  width: 100%;
+}
+

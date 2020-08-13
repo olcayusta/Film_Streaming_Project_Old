@@ -1,0 +1,79 @@
+<mat-toolbar [class.sticky]="sticky">
+  <button mat-icon-button (click)="drawerOpen.emit()" class="menu-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a routerLink="/" class="app-title" [class.hidden]="mobileSearchForm">
+    <span>app</span>
+  </a>
+
+  <div class="links" lang="tr">
+ <!--   <mat-tab-group>
+      <mat-tab label="TV"></mat-tab>
+      <mat-tab label="FİLM"></mat-tab>
+      <mat-tab label="ÇOCUK"></mat-tab>
+      <mat-tab label="• CANLI"></mat-tab>
+    </mat-tab-group>-->
+ <a routerLink="tv" routerLinkActive="active">Tv Şovları</a>
+    <a routerLink="movies" routerLinkActive="active">Film</a>
+    <a routerLink="kids" routerLinkActive="active">Çocuk</a>
+    <a routerLink="rooms" routerLinkActive="active"><span class="live-bracket">•</span> Canlı</a>
+  </div>
+ <!-- <form autocomplete="off" spellcheck="false" class="search-form" [class.mobile-form]="mobileSearchForm" [class.focused]="searchFocused" [class.mat-elevation-z2]="searchFocused">
+    <button mat-icon-button>
+      <mat-icon class="search-icon">search</mat-icon>
+    </button>
+    <input #searchInput placeholder="Ara" matNativeControl class="search-form-input" (focus)="searchFocused = true" (blur)="searchFocused = false" [formControl]="searchTerm">
+    &lt;!&ndash; <mat-autocomplete #auto="matAutocomplete">
+       <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+         <span>{{state.name}}</span>
+       </mat-option>
+     </mat-autocomplete>&ndash;&gt;
+  </form>-->
+  <span class="flex-spacer"></span>
+  <!--    <button mat-icon-button (click)="openRoomDialog()">
+        <mat-icon>add</mat-icon>
+      </button>-->
+<!--  <button mat-icon-button matTooltip="Bildirimler" class="notification-button" #notificationButton="cdkOverlayOrigin" cdkOverlayOrigin (click)="notificationPopupOpened = true">
+    <mat-icon>notifications</mat-icon>
+  </button>-->
+
+<!--  <button mat-icon-button matTooltip="Ara" class="mobile-search-button" (click)="openSearchForm()">
+    <mat-icon>{{mobileSearchForm ? 'close' : 'search'}}</mat-icon>
+  </button>-->
+
+  <button mat-icon-button class="search-button">
+    <mat-icon>search</mat-icon>
+  </button>
+
+<!--  <button mat-icon-button (click)="openBottomSheet()">
+    <mat-icon>settings</mat-icon>
+  </button>-->
+
+  <button class="avatar-button" (click)="openBottomSheet()" [class.hidden]="mobileSearchForm">
+    <img class="avatar-img" width="32" height="32" src="https://i.pinimg.com/564x/d6/66/27/d66627ef898ebee0be85cdf2de1c6bdd.jpg" #profileAvatar="cdkOverlayOrigin" cdkOverlayOrigin (click)="profileAvatarMenuOpened = true">
+  </button>
+</mat-toolbar>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="profileAvatar"
+  [cdkConnectedOverlayOpen]="profileAvatarMenuOpened === true"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  cdkConnectedOverlayBackdropClass="blue-overlay"
+  [cdkConnectedOverlayScrollStrategy]="overlay.scrollStrategies.block()"
+  (backdropClick)="profileAvatarMenuOpened = null">
+  <app-usermenu-popup></app-usermenu-popup>
+</ng-template>
+
+<!--
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="notificationButton"
+  [cdkConnectedOverlayOpen]="notificationPopupOpened === true"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  cdkConnectedOverlayBackdropClass="blue-overlay"
+  [cdkConnectedOverlayScrollStrategy]="overlay.scrollStrategies.block()"
+  (backdropClick)="notificationPopupOpened = null">
+  <app-notification-popup></app-notification-popup>
+</ng-template>
+-->

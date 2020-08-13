@@ -1,0 +1,26 @@
+<ng-container *ngIf="cast">
+  <mat-toolbar>
+    <button mat-icon-button>
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="people-page">
+
+    <div class="people-page-content">
+      <div class="people-header">
+        <img [src]="cast.avatar">
+        <h1>{{cast.name}}</h1>
+      </div>
+
+      <div class="people-films">
+        <h1 class="mat-title">Filmler</h1>
+        <div class="film-list">
+          <div class="film-item" *ngFor="let film of cast.films">
+            <img [src]="film.poster" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ng-container>

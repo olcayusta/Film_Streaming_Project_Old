@@ -1,0 +1,54 @@
+<div class="login-card">
+  <form class="signup-form" autocomplete="off" spellcheck="false" [formGroup]="form">
+    <div class="body">
+      <h2>Netflix hesabınızı oluşturun</h2>
+      <div class="flex-row">
+        <div class="info">
+          <div class="grid">
+
+            <mat-form-field appearance="outline">
+              <mat-label>Ad</mat-label>
+              <input matInput formControlName="firstName">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Soyad</mat-label>
+              <input matInput formControlName="lastName">
+            </mat-form-field>
+
+            <mat-form-field class="item-full" appearance="outline">
+              <mat-label>Eposta</mat-label>
+              <input matInput formControlName="email">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Şifre</mat-label>
+              <input matInput formControlName="password">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Şifre tekrar</mat-label>
+              <input matInput formControlName="confirmPassword">
+            </mat-form-field>
+
+            <div class="row-actions">
+              <button mat-raised-button color="primary" type="submit">İLERİ</button>
+            </div>
+
+          </div>
+        </div>
+        <div class="avatar">
+          <input #file type="file" id="file" (change)="fileChange($event)">
+          <div class="avatar-content">
+            <div class="profile-img-placeholder">
+              <img src="https://i.pinimg.com/564x/78/6a/03/786a03de5809d7ddc63e0652c966fc9f.jpg" class="profile-image" alt="">
+            </div>
+            <button type="button" mat-icon-button (click)="selectPhoto()">
+              <mat-icon>photo_camera</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

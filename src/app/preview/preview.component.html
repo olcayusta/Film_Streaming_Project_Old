@@ -1,0 +1,211 @@
+<!--
+<mat-sidenav-container>
+&lt;!&ndash;  <mat-sidenav class="title-info" #sidenav position="end" mode="side">
+    <div class="mat-sidenav-header">
+      <h2 class="mat-h2">Bilgi</h2>
+      <button mat-icon-button>
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div class="details">Detaylar</div>
+    <mat-nav-list class="sidenav-details-list">
+      <mat-list-item>
+        <h3 matLine>Ses Miksajı</h3>
+        <p matLine>Dolby Stereo</p>
+      </mat-list-item>
+      <mat-list-item>
+        <h3 matLine>En boy oranı</h3>
+        <p matLine>16:9 HD</p>
+      </mat-list-item>
+      <mat-list-item>
+        <h3 matLine>Ses parçaları</h3>
+        <p matLine>İngilizce - Türkçe</p>
+      </mat-list-item>
+      <mat-list-item>
+        <h3 matLine>Altyazı</h3>
+        <p matLine>İngilizce - <span class="default-language">Türkçe</span> - Almanca - Fransızca</p>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>&ndash;&gt;
+  <mat-sidenav-content>
+   &lt;!&ndash; <mat-toolbar *ngIf="post">
+      <mat-toolbar-row>
+        <a mat-icon-button routerLink="/">
+          <mat-icon>arrow_back</mat-icon>
+        </a>
+      &lt;!&ndash;  <span class="toolbar-title">{{post.title}}</span>&ndash;&gt;
+        <nav mat-tab-nav-bar>
+          <a mat-tab-link
+             [routerLink]="['/title', postId]"
+             [routerLinkActiveOptions]="{exact: true}"
+             routerLinkActive #rla="routerLinkActive"
+             [active]="rla.isActive">ANA SAYFA</a>
+          <a mat-tab-link
+             routerLink="cast"
+             routerLinkActive #rla2="routerLinkActive"
+             [active]="rla2.isActive">OYUNCULAR & EKİP</a>
+          <a mat-tab-link
+             routerLink="seasons"
+             routerLinkActive #rla3="routerLinkActive"
+             [active]="rla3.isActive">{{post.type === 1 ? 'FİLM' : 'BÖLÜMLER'}}</a>
+        </nav>
+&lt;!&ndash;        <mat-tab-group>
+          <mat-tab label="ANA SAYFA"></mat-tab>
+          <mat-tab label="OYUNCULAR & EKİP"></mat-tab>
+          <mat-tab label="BÖLÜMLER"></mat-tab>
+        </mat-tab-group>&ndash;&gt;
+&lt;!&ndash;        <button mat-button matTooltip="Oyuncular" lang="tr">
+          <mat-icon>group</mat-icon>
+          <span>Ekip</span>
+        </button>&ndash;&gt;
+        <span class="flex-spacer"></span>
+&lt;!&ndash;        <button mat-icon-button matTooltip="İzle" lang="tr">
+          <mat-icon>movie</mat-icon>
+        </button>&ndash;&gt;
+        <button mat-icon-button matTooltip="Teknik Bilgi" (click)="sidenav.toggle()">
+          <mat-icon>info_outline</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Favorilere ekle" (click)="favorite()">
+          <mat-icon>{{isFavorited ? 'star' : 'star_outline'}}</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Diğer seçenekler" [matMenuTriggerFor]="moreMenu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #moreMenu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>feedback</mat-icon>
+            <span>Report an issue</span>
+          </button>
+        </mat-menu>
+      </mat-toolbar-row>
+&lt;!&ndash;      <mat-toolbar-row>
+        <span class="toolbar-title">Animals for adoption</span>
+      </mat-toolbar-row>
+      <mat-toolbar-row>
+        <nav mat-tab-nav-bar>
+          <a mat-tab-link
+             [routerLink]="['/title', postId]"
+             [routerLinkActiveOptions]="{exact: true}"
+             routerLinkActive #rla="routerLinkActive"
+             [active]="rla.isActive">Hakkında</a>
+        </nav>
+      </mat-toolbar-row>&ndash;&gt;
+    </mat-toolbar>&ndash;&gt;
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+-->
+
+<!--<div class="ytmusic-immersive-header-renderer">
+  <div class="image">
+    <picture class="style-scope ytmusic-fullbleed-thumbnail-renderer">
+      <source class="ytmusic-fullbleed-thumbnail-renderer" media="(max-width: 540px)" srcset="https://lh3.googleusercontent.com/j6DV_uBOQt4ekfgj0EOggW_U3PopR5QfOXt1nq6KXMTgJdllOnf5Umpy6aDZ7c_58IRyzANycbEk9g=w540-h225-p-l90-rj">
+      <source class="ytmusic-fullbleed-thumbnail-renderer" media="(min-width: 541px) and (max-width: 816px)" srcset="https://lh3.googleusercontent.com/j6DV_uBOQt4ekfgj0EOggW_U3PopR5QfOXt1nq6KXMTgJdllOnf5Umpy6aDZ7c_58IRyzANycbEk9g=w816-h340-p-l90-rj">
+      <source class="ytmusic-fullbleed-thumbnail-renderer" media="(min-width: 817px) and (max-width: 1440px)" srcset="https://lh3.googleusercontent.com/j6DV_uBOQt4ekfgj0EOggW_U3PopR5QfOXt1nq6KXMTgJdllOnf5Umpy6aDZ7c_58IRyzANycbEk9g=w1440-h600-p-l90-rj">
+      <source class="ytmusic-fullbleed-thumbnail-renderer" media="(min-width: 1441px) and (max-width: 1920px)" srcset="https://lh3.googleusercontent.com/j6DV_uBOQt4ekfgj0EOggW_U3PopR5QfOXt1nq6KXMTgJdllOnf5Umpy6aDZ7c_58IRyzANycbEk9g=w1920-h800-p-l90-rj">
+      <source class="ytmusic-fullbleed-thumbnail-renderer" media="(min-width: 1921px) and (max-width: 2880px)" srcset="https://lh3.googleusercontent.com/j6DV_uBOQt4ekfgj0EOggW_U3PopR5QfOXt1nq6KXMTgJdllOnf5Umpy6aDZ7c_58IRyzANycbEk9g=w2880-h1200-p-l90-rj">
+      <img class="ytmusic-fullbleed-thumbnail-renderer" alt="" src="https://lh3.googleusercontent.com/j6DV_uBOQt4ekfgj0EOggW_U3PopR5QfOXt1nq6KXMTgJdllOnf5Umpy6aDZ7c_58IRyzANycbEk9g=w2880-h1200-p-l90-rj">
+    </picture>
+  </div>
+</div>-->
+
+<ng-container>
+  <div class="hero">
+    <!--  <div class="hero-banner" [style.backgroundImage]="post.heroImg | sanitize"></div>-->
+    <div class="hero-banner2">
+<!--      <picture>
+        <source media="(min-width: 540px) and (max-width: 1200px)" srcset="https://lh3.googleusercontent.com/j6DV_uBOQt4ekfgj0EOggW_U3PopR5QfOXt1nq6KXMTgJdllOnf5Umpy6aDZ7c_58IRyzANycbEk9g=w540-h225-p-l90-rj">
+        <source media="(min-width: 1441px) and (max-width: 1600px)" srcset="https://lh3.googleusercontent.com/j6DV_uBOQt4ekfgj0EOggW_U3PopR5QfOXt1nq6KXMTgJdllOnf5Umpy6aDZ7c_58IRyzANycbEk9g=w1920-h800-p-l90-rj">
+        &lt;!&ndash;      <img src="https://lh3.googleusercontent.com/j6DV_uBOQt4ekfgj0EOggW_U3PopR5QfOXt1nq6KXMTgJdllOnf5Umpy6aDZ7c_58IRyzANycbEk9g=w1920-h800-p-l90-rj">&ndash;&gt;
+        <img id="image" [src]="post.heroImg" #fullBleedImage (load)="doSomething()" [class.thumbnail-renderer-loaded]="imageLoaded">
+      </picture>-->
+      <picture>
+        <img id="image" [src]="post.heroImg" (load)="doSomething()" [class.thumbnail-renderer-loaded]="imageLoaded">
+      </picture>
+    </div>
+
+    <div class="content-container-wrapper">
+      <div class="content-container">
+        <h2>{{post.title}}</h2>
+        <div class="title-info">TV 14 - 2009 - 21 minute</div>
+        <div class="description">In Depression-era London, a now-grown Jane and Michael Banks, along with Michael's three children, are visited by the enigmatic Mary Poppins following a personal loss. Through her unique magical skills, and with the aid of her friend Jack, she helps the family rediscover the joy and wonder missing in their lives.</div>
+      </div>
+    </div>
+
+   <!-- <div class="hero-bg"></div>
+    <div class="hero-meta">
+      <div class="hero-secondary">
+        <span>TV14</span>
+        <span class="bracket"></span>
+        <span> {{post.releaseDate}}</span>
+        <span class="bracket"></span>
+        <span *ngFor="let genre of post.genres; let last = last">{{genre.title}}{{last ? null : ','}} </span>
+      </div>
+      <h1 class="hero-meta-primary">
+        {{post.title}}
+      </h1>
+      <div class="hero-description">
+        {{post.summary}}
+      </div>
+      &lt;!&ndash;    <div class="hero-buttons">
+            <button mat-icon-button matTooltip="Kitaplığa ekle">
+              <mat-icon>add_circle_outline</mat-icon>
+            </button>
+          </div>&ndash;&gt;
+      <div class="hero-hr"></div>
+      <div class="hero-actions">
+        <button mat-button (click)="addToLibrary()">
+          <mat-icon>add</mat-icon>
+          <span>KİTAPLIĞA EKLE</span>
+        </button>
+        <button mat-button>
+          <mat-icon>share</mat-icon>
+          <span>PAYLAŞ</span>
+        </button>
+        &lt;!&ndash;   <button mat-button [routerLink]="['/title', postId, 'cast']" routerLinkActive="$router_link-active$">OYUNCULAR & EKİP</button>
+           <button mat-button>FOTOĞRAFLAR</button>
+           <button mat-button>VİDEOLAR</button>&ndash;&gt;
+      </div>
+    </div>-->
+  </div>
+  <!--<div class="shelf">
+    <div class="expandable-box">
+      <div class="expandable-box-shelf">
+        <div class="expandable-box-content expandable-description text-select">
+          Young, anti-social computer programmer Elliot works as a cybersecurity engineer during the day, but at night he is a vigilante hacker. He is recruited by the mysterious leader of an underground group of hackers to join their organization. Elliot's task? Help bring down corporate America, including the company he is paid to protect, which presents him with a moral dilemma. Although he works for a corporation, his personal beliefs make it hard to resist the urge to take down the heads of multinational companies that he believes are running -- and ruining -- the world.
+        </div>
+        <div class="expandable-box-content cast-carousel"></div>
+      </div>
+    </div>
+  </div>-->
+  <div class="top-cast">
+    <div class="cast-img">
+      <img src="https://m.media-amazon.com/images/M/MV5BODEwMjkzNDIzOV5BMl5BanBnXkFtZTgwOTQ4NTU0NzE@._V1_UX214_CR0,0,214,317_AL_.jpg" alt="Rami Malek">
+      <div class="cast-title">Rami Malek</div>
+      <div class="cast-role">Elliot Alderson</div>
+    </div>
+    <div class="cast-img">
+      <img src="https://m.media-amazon.com/images/M/MV5BMTY5ODA1ODY2Nl5BMl5BanBnXkFtZTgwNjcwNDczNzE@._V1_UX214_CR0,0,214,317_AL_.jpg">
+      <div class="cast-title">Christian Slater</div>
+      <div class="cast-role">Mr. Robot</div>
+    </div>
+  </div>
+</ng-container>
+
+
+
+<!--<mat-toolbar>
+  <mat-tab-group>
+    <mat-tab label="Bilgi"></mat-tab>
+    <mat-tab label="Film"></mat-tab>
+    <mat-tab label="Oyuncular"></mat-tab>
+  </mat-tab-group>
+</mat-toolbar>-->
+
+<ng-container *ngIf="post">
+  <h2>{{post.title}}</h2>
+</ng-container>
+
+<!--<app-preview-about></app-preview-about>-->
+<router-outlet></router-outlet>

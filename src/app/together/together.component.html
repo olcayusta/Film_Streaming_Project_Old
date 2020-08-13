@@ -1,0 +1,144 @@
+<mat-toolbar>
+  <button mat-icon-button>
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <!-- <span class="toolbar-title">Geri dön</span>-->
+  <span class="flex-spacer"></span>
+  <button mat-icon-button matTooltip="Paylaş" [matMenuTriggerFor]="moreMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>
+
+<!--<div class="watch-area">
+  <div class="left-area">
+    <div class="player-area">
+
+   &lt;!&ndash;   <div class="video-overlay-renderer"></div>
+      <video #videoRef autoplay controls></video>&ndash;&gt;
+
+  &lt;!&ndash;    <button mat-button (click)="openBottomSheet()">AYARLAR</button>&ndash;&gt;
+      <video controls>
+        <source src="https://video-ssl.itunes.apple.com/apple-assets-us-std-000001/Video128/v4/78/e9/2d/78e92d9d-d197-f129-9d64-60f1c6a962d7/mzvf_5423416201681465709.640x462.h264lc.U.p.m4v">
+      </video>
+
+      &lt;!&ndash;      <div class="main-panel">
+              <div class="music-player">
+                <div class="song-video">
+                  <div class="player-wrapper">
+                    <div class="html5-video-player">
+                      <video #videoRef autoplay controls></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>&ndash;&gt;
+
+      &lt;!&ndash;<div #videoEl></div>&ndash;&gt;
+      &lt;!&ndash;    <video #videoRef autoplay controls>
+            &lt;!&ndash;<source src="http://localhost:4000/static/snowy-trees.mp4">&ndash;&gt;
+          </video>&ndash;&gt;
+    </div>
+    &lt;!&ndash;<button mat-button (click)="setAudioJapan()">JAPAN</button>&ndash;&gt;
+  </div>
+  &lt;!&ndash;<div class="right-area">
+    <div class="chat-toolbar">
+      <span>Top chat</span>
+      <button mat-icon-button>
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <span class="flex-spacer"></span>
+      <button mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+    &lt;!&ndash; <button mat-raised-button (click)="join()">JOIN</button>
+     <button mat-raised-button (click)="play()">PLAY</button>
+     <button mat-raised-button (click)="pause()">PAUSE</button>
+     <button mat-raised-button (click)="hls.audioTrack = 1">PAUSE</button>
+     <button mat-raised-button>SYNC</button>&ndash;&gt;
+    <div class="messages">
+      <div class="msg-item">
+        <img class="msg-avatar" src="http://localhost:4000/static/pink-panther.jpg">
+        <div class="msg-info">
+          <span class="display-name">Pink Panther</span>
+          <span class="msg-text">buz gibi oyun, buz gibi oyun v2, buz gibi oyun v3</span>
+        </div>
+      </div>
+      <div class="msg-item" *ngFor="let msg of messages">
+        <img class="msg-avatar" src="http://localhost:4000/static/pink-panther.jpg">
+        <div class="msg-info">
+          <span class="display-name">Pink Panther</span>
+          <span class="msg-text">{{msg}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="chat-footer">
+      <div>
+        <div class="chat-footer-info">
+          <img src="https://yt3.ggpht.com/-i06HwjS3vEE/AAAAAAAAAAI/AAAAAAAAAAA/CzFa28Lv6fM/s32-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="">
+          <div class="display-name">olcay usta</div>
+        </div>
+        <mat-form-field floatLabel="never">
+          <mat-label>Bir şeyler söyle...</mat-label>
+          <input autocomplete="off" spellcheck="false" #input matInput matTextareaAutosize (keydown.enter)="keydownEnter($event)" [formControl]="message">
+          <mat-hint align="end">{{input.value.length}} / 200</mat-hint>
+        </mat-form-field>
+      </div>
+
+
+      <div class="action-row">
+        <button mat-icon-button color="primary" matTooltip="Mesajı gönder" (click)="sendChat()">
+          <mat-icon>send</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>&ndash;&gt;
+</div>-->
+
+<div class="mobile-watch">
+  <div class="my-video-player">
+    <video controls>
+      <source src="http://192.168.1.6:4000/static/output/master.m3u8">
+    </video>
+    <mat-progress-bar value="50"></mat-progress-bar>
+  </div>
+
+  <div class="chat">
+
+    <div class="chat-items">
+      <div class="chat-item">
+        <img src="https://i.pinimg.com/564x/d6/66/27/d66627ef898ebee0be85cdf2de1c6bdd.jpg" alt="">
+        <div class="chat-details">
+          <div class="chat-username">olcayusta</div>
+          <div class="chat-msg">En sevdigim seri bu olsa gerek.</div>
+        </div>
+      </div>
+      <div class="chat-item" *ngFor="let message of messages">
+        <img src="https://i.pinimg.com/564x/d6/66/27/d66627ef898ebee0be85cdf2de1c6bdd.jpg" alt="">
+        <div class="chat-details">
+          <div class="chat-username">olcayusta</div>
+          <div class="chat-msg">{{message}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reply-chat">
+      <mat-form-field floatLabel="never">
+        <mat-label>Bir şeyler yaz</mat-label>
+        <input #myInput matInput [(ngModel)]="chatMessage" (keydown.enter)="onEnter(); myInput.blur()">
+      </mat-form-field>
+    </div>
+  </div>
+
+
+
+</div>
+
+<mat-menu #moreMenu="matMenu">
+  <button mat-menu-item (click)="openBottomSheet()">
+    <mat-icon>settings</mat-icon>
+    <span>Ayarlar</span>
+  </button>
+</mat-menu>
+
+<!--<mat-spinner *ngIf="!loaded"></mat-spinner>-->

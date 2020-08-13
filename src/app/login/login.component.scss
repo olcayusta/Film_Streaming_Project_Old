@@ -1,0 +1,56 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 9;
+  box-sizing: content-box;
+}
+
+.login-page-center {
+  max-width: 1552px;
+  margin: 24px auto;
+}
+
+.login-form {
+  width: 450px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 40px;
+  margin: 0 auto;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 8px;
+}
+
+.login-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+mat-form-field {
+  margin-top: 24px;
+}
+
+.avatar-placeholder {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background-color: #eee;
+  margin: 0 auto;
+
+  img {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}

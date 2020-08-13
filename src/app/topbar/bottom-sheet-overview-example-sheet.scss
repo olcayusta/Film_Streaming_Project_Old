@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 20px;
+    line-height: 36px;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+.subtitle {
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(0,0,0,.54);
+}

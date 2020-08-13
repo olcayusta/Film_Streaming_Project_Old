@@ -1,0 +1,73 @@
+<div class="films-wrapper">
+
+  <div id="header">
+    <div class="header-left">
+      <h2 class="section-title" lang="tr">Filmler</h2>
+    </div>
+    <span class="flex-spacer"></span>
+    <div class="header-right">
+      <mat-form-field appearance="outline">
+        <select matNativeControl value="option1">
+          <input class="select-search" matNativeControl placeholder="Ara" autocomplete="off" spellcheck="false">
+          <option value="option1">Aksiyon ve Macera</option>
+          <option value="option2">Anime</option>
+          <option value="option3">Belgeseller</option>
+          <option value="option12">Bilim Kurgu & Fantazi</option>
+          <option value="option4">Çocuk & Aile</option>
+          <option value="option5">Dramalar</option>
+          <option value="option6">Klasik</option>
+          <option value="option7">Komediler</option>
+          <option value="option8">Kült</option>
+          <option value="option9">Korku</option>
+          <option value="option10">Müzikal</option>
+          <option value="option11">Romantik</option>
+        </select>
+
+ <!--       <mat-select value="option1">
+          <input class="select-search" matNativeControl placeholder="Ara" autocomplete="off" spellcheck="false">
+          <mat-option value="option1">Aksiyon ve Macera</mat-option>
+          <mat-option value="option2">Anime</mat-option>
+          <mat-option value="option3">Belgeseller</mat-option>
+          <mat-option value="option12">Bilim Kurgu & Fantazi</mat-option>
+          <mat-option value="option4">Çocuk & Aile</mat-option>
+          <mat-option value="option5">Dramalar</mat-option>
+          <mat-option value="option6">Klasik</mat-option>
+          <mat-option value="option7">Komediler</mat-option>
+          <mat-option value="option8">Kült</mat-option>
+          <mat-option value="option9">Korku</mat-option>
+          <mat-option value="option10">Müzikal</mat-option>
+          <mat-option value="option11">Romantik</mat-option>
+        </mat-select>-->
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="items">
+    <div class="layout-item" *ngFor="let item of items">
+      <a class="simple-endpoint">
+        <div class="img-placeholder">
+          <img class="lazy" [src]="item.poster" appLazyLoad alt="">
+        </div>
+        <div class="img-overlay-renderer">
+          <div class="background-overlay-renderer"></div>
+        </div>
+      </a>
+      <div class="details">
+        <a class="title" lang="tr">{{item.title}}</a>
+        <div class="subtitle">TV-14 • {{item.subtitle}}</div>
+      </div>
+    </div>
+  </div>
+
+  <mat-menu #moreMenu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>playlist_add</mat-icon>
+      <span>Filmi kıtaplığa ekle</span>
+    </button>
+<!--    <button mat-menu-item>
+      <mat-icon>remove_circle_outline</mat-icon>
+      <span>Listemden kaldır</span>
+    </button>-->
+  </mat-menu>
+
+</div>

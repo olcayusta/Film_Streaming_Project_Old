@@ -1,0 +1,147 @@
+.mat-drawer-inner-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar-track {
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .24);
+}
+
+.toolbar-title {
+  margin-left: 20px;
+}
+
+/*@media (max-width: 360px) {
+  :host .menu-button {
+    margin-left: -12px;
+  }
+}*/
+
+.toolbar-logo {
+  margin-left: 20px;
+
+  img {
+    display: flex;
+    width: 64px;
+  }
+}
+
+:host {
+
+  @media (max-width: 360px) {
+    /*.mat-list-item {
+      height: 40px !important;
+    }*/
+  }
+
+  ::ng-deep .mat-list-item-content {
+    // padding: 0 24px !important;
+  }
+
+  .mat-list-item {
+    margin: 4px 8px;
+    border-radius: 4px;
+    width: auto !important;
+
+      mat-icon {
+        margin-right: 30px;
+        color: hsl(0, 0, 54%);
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+  mat-nav-list {
+    padding-bottom: 8px;
+  }
+
+  .mat-list-item.active {
+    background-color: rgba(0,0,0, 0.12) !important;
+
+    mat-icon {
+      color: black;
+    }
+
+    span {
+      color: black;
+      font-weight: 500;
+    }
+  }
+}
+
+
+
+.navigation-drawer-header {
+  padding: 16px;
+
+  img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    object-fit: cover;
+  }
+
+  .display-name {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 36px;
+    margin: 0;
+    margin-top: 16px;
+  }
+
+  .email {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .email-text {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    mat-icon {
+      color: rgba(0,0,0,.54);
+    }
+  }
+}
+
+
+
+#copyright {
+  padding: 24px 27px;
+  color: #11111199;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 2.1rem;
+}
+
+::ng-deep {
+  .mat-drawer-inner-container {
+    overflow: hidden;
+  }
+}
+
+.my-scroll {
+  overflow: auto;
+  height: calc(100% - 64px);
+}
+
+.my-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.my-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, .12);
+  // border-radius: 4px;
+}
+
+.my-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .24);
+  // border-radius: 4px;
+}

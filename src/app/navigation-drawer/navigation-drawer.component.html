@@ -1,0 +1,71 @@
+<!--<div class="navigation-drawer-header">
+  <div>
+    <img src="https://i.pinimg.com/564x/83/de/17/83de178f8ab6d786debc2330a49f127c.jpg" alt="">
+  </div>
+  <h2 class="display-name">Olcay Usta</h2>
+  <div class="email">
+    <span class="email-text">olcayusta@gmail.com</span>
+    <mat-icon>arrow_drop_down</mat-icon>
+  </div>
+</div>-->
+<mat-toolbar>
+  <button mat-icon-button class="menu-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a class="toolbar-logo">
+    <span>app</span>
+  </a>
+</mat-toolbar>
+<mat-divider></mat-divider>
+<div class="my-scroll">
+  <mat-nav-list>
+    <a mat-list-item routerLinkActive="active" routerLink="" [routerLinkActiveOptions]="{exact: true}">
+      <mat-icon>home</mat-icon>
+      <span>Ana sayfa</span>
+    </a>
+    <a mat-list-item routerLinkActive="active" routerLink="rooms">
+      <mat-icon>whatshot</mat-icon>
+      <span>Trendler</span>
+    </a>
+    <a mat-list-item routerLinkActive="active" routerLink="library">
+      <mat-icon>layers</mat-icon>
+      <span>Kitaplık</span>
+    </a>
+  </mat-nav-list>
+  <mat-divider></mat-divider>
+  <mat-nav-list>
+    <a mat-list-item routerLinkActive="active" routerLink="history">
+      <mat-icon>history</mat-icon>
+      <span>Geçmiş</span>
+    </a>
+    <a mat-list-item routerLink="watchlater" routerLinkActive="active">
+      <mat-icon>watch_later</mat-icon>
+      <span>Daha sonra izle</span>
+    </a>
+    <a mat-list-item routerLink="favorites" routerLinkActive="active">
+      <mat-icon>thumb_up</mat-icon>
+      <span>Beğenilenler</span>
+    </a>
+  </mat-nav-list>
+  <mat-divider></mat-divider>
+  <mat-nav-list>
+    <a mat-list-item routerLinkActive="active" routerLink="settings">
+      <mat-icon>settings</mat-icon>
+      <span>Ayarlar</span>
+    </a>
+    <a mat-list-item routerLinkActive="active" routerLink="/help">
+      <mat-icon>help</mat-icon>
+      <span>Yardım</span>
+    </a>
+    <mat-list-item routerLinkActive="active">
+      <mat-icon>feedback</mat-icon>
+      <span>Geri bildirim gönder</span>
+    </mat-list-item>
+  </mat-nav-list>
+</div>
+
+<!--
+<div id="copyright">
+  <span>© 2018 app, LLC</span>
+</div>
+-->

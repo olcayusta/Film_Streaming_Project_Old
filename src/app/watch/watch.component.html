@@ -1,0 +1,253 @@
+<!--  <mat-toolbar>
+    <button mat-icon-button color="primary">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>info</mat-icon>
+    </button>
+    <button mat-icon-button color="primary">
+      <mat-icon>fullscreen</mat-icon>
+    </button>
+  </mat-toolbar>-->
+<div class="player-container player-theme" [@.disabled]="true" (mousemove)="mouseMove($event)">
+  <div class="player" [class.fullscreen]="isFullscreen">
+    <!--       <div class="video-loader">
+             <mat-spinner></mat-spinner>
+           </div>-->
+    <div class="player-header-controls">
+
+      <div class="mobile-header-controls">
+        <button mat-icon-button (click)="openBottomSheet()">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+
+      <ng-container *ngIf="isFullscreen">
+        <button class="fullscreen-button" mat-icon-button matTooltip="Tam ekrandan çık" (click)="fullscreenExit()">
+          <mat-icon>fullscreen_exit</mat-icon>
+        </button>
+      </ng-container>
+      <ng-container *ngIf="!isFullscreen">
+        <button mat-icon-button matTooltip="Tam ekran" (click)="fullscreen()">
+          <mat-icon>fullscreen</mat-icon>
+        </button>
+      </ng-container>
+    </div>
+
+    <div class="aspect-ratio">
+      <video id="video2" #videoRef (progress)="videoProgress($event)" (playing)="videoProgress($event)" (waiting)="videoWaiting()" (timeupdate)="videoProgress($event)">
+        <!--  <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4">-->
+        <!--  <source src="http://localhost:4000/static/sun.mp4" type="video/mp4">-->
+      </video>
+    </div>
+
+    <div class="watch-footer">
+
+      <div class="mobile-controller" *ngIf="onloadedData">
+        <div class="mobile-controller-wrapper">
+          <div class="mobile-time">{{video.currentTime | currentTime}}</div>
+          <mat-slider color="primary" [value]="progress"></mat-slider>
+          <div class="mobile-time">{{video.duration | duration}}</div>
+        </div>
+      </div>
+
+      <!-- Subtitle Display -->
+      <div id="subtitle-display">
+        <div id="text2">
+          <span id="text"></span>
+        </div>
+      </div>
+
+      <!-- Player Controls -->
+      <div class="player-controls" *ngIf="onloadedData">
+        <div class="player-buttons">
+          <button mat-icon-button matTooltip="Önceki bölüm">
+            <mat-icon>skip_previous</mat-icon>
+          </button>
+          <button mat-icon-button (click)="replay10()" matTooltip="10 saniye geri git">
+            <mat-icon>replay_10</mat-icon>
+          </button>
+          <button mat-icon-button (click)="playpause()" [matTooltip]="video.paused ? 'Oynat' : 'Duraklat'">
+            <mat-icon>{{video.paused ? 'play_arrow' : 'pause'}}</mat-icon>
+          </button>
+          <button mat-icon-button (click)="forward10()" matTooltip="10 saniye ileri git">
+            <mat-icon>forward_10</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip="Sonraki bölüm">
+            <mat-icon>skip_next</mat-icon>
+          </button>
+          <button mat-icon-button class="volume-button" (click)="video.muted =! video.muted" [matTooltip]="video.muted ? 'Sesi Aç' : 'Sessiz'">
+            <mat-icon>{{video.muted ? 'volume_off' : video.volume >= 0.5 ? 'volume_up' : 'volume_down'}}</mat-icon>
+          </button>
+          <mat-slider color="primary" [value]="80" (input)="volumeChange($event)"></mat-slider>
+          <!-- <mat-slider color="primary" class="volume-slider" [value]="50" *ngIf="volumeSliderOpened" (change)="volumeChange($event)"></mat-slider>-->
+
+          <span class="flex-spacer"></span>
+          <div class="video-time">
+            <span class="video-currenttime">{{video.currentTime | currentTime}}</span>
+            <span>/</span>
+            <span class="video-duration">{{video.duration | duration}}</span>
+          </div>
+          <button mat-icon-button matTooltip="Bölümler" #settingsButton="cdkOverlayOrigin" cdkOverlayOrigin (click)="settingSelectorOpened = true">
+            <mat-icon>list</mat-icon>
+          </button>
+          <button mat-icon-button [matMenuTriggerFor]="appMenu" matTooltip="Altyazı">
+            <mat-icon>subtitles</mat-icon>
+          </button>
+          <button mat-icon-button [matMenuTriggerFor]="animals">
+            <mat-icon>settings</mat-icon>
+          </button>
+          <ng-template
+            cdkConnectedOverlay
+            [cdkConnectedOverlayOrigin]="settingsButton"
+            [cdkConnectedOverlayOpen]="settingSelectorOpened === true"
+            [cdkConnectedOverlayHasBackdrop]="true"
+            cdkConnectedOverlayViewportMargin="24"
+            cdkConnectedOverlayMinWidth="122px"
+            cdkConnectedOverlayWidth="364px"
+            [cdkConnectedOverlayScrollStrategy]="overlay.scrollStrategies.block()"
+            (backdropClick)="settingSelectorOpened = null">
+            <app-episodes-popup [postId]="stream.post.id"></app-episodes-popup>
+          </ng-template>
+        </div>
+
+        <mat-progress-bar mode="buffer" [value]="progress" [bufferValue]="buffer"></mat-progress-bar>
+
+       <!-- <mat-slider color="primary" [value]="progress"></mat-slider>-->
+
+        <div class="video-episode-info">
+          <div class="video-title">
+            <div class="serie-episode-info">
+              <span class="episode-number">S{{stream.meta.season}} B{{stream.meta.no}}</span>
+              <span class="episode-name">{{stream.title}}</span>
+            </div>
+            <span class="serie-title">{{stream.post.title}}</span>
+          </div>
+     <!--     <div class="video-title next-episode">
+            <span class="serie-episode-info">S1 - E5 "Lead Pack"</span>
+            <span class="serie-title">Baby Looney Tunes</span>
+          </div>-->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--
+  <div id="sidebar">
+    <div class="comments">
+      <div class="comment-item">
+        <img src="http://localhost:4000/static/sam-simon.jpg">
+        <div>
+          <div class="comment-displayname">Sam Simon</div>
+          <div class="comment-text">Good film.</div>
+        </div>
+      </div>
+      <div class="comment-item">
+        <img src="http://localhost:4000/static/pink-panther.jpg">
+        <div>
+          <div class="comment-displayname">Pink Panther</div>
+          <div class="comment-text">Good film.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+
+
+<mat-menu #appMenu="matMenu">
+  <ng-template matMenuContent>
+    <button mat-menu-item disabled>
+      <span>Altyazı</span>
+    </button>
+    <button mat-menu-item (click)="subtitleOff()">
+      <span class="menu-item-text">Kapalı</span>
+    </button>
+    <button mat-menu-item class="selected" (click)="subtitleChange()">
+      <mat-icon>check</mat-icon>
+      <span class="menu-item-text">Türkçe (Varsayılan)</span>
+    </button>
+    <button mat-menu-item>
+      <span class="menu-item-text">İngilizce</span>
+    </button>
+  </ng-template>
+</mat-menu>
+
+<mat-menu #popup="matMenu" xPosition="before" yPosition="above">
+  <ng-template matMenuContent>
+    <button mat-menu-item *ngFor="let track of audioTracks; let index = index" (click)="setTrack(track.id)" [class.selected]="index === selectedAudioTrack">
+      <mat-icon *ngIf="index === selectedAudioTrack">check</mat-icon>
+      <span>{{track.lang | lang}}</span>
+    </button>
+  </ng-template>
+</mat-menu>
+
+<mat-menu #animals="matMenu" yPosition="above">
+  <button mat-menu-item disabled>Ayarlar</button>
+  <button mat-menu-item [matMenuTriggerFor]="vertebrates">Hız</button>
+  <button mat-menu-item [matMenuTriggerFor]="invertebrates">Kalite</button>
+  <button mat-menu-item [matMenuTriggerFor]="popup" *ngIf="audioTracks">Seslendirme</button>
+</mat-menu>
+
+<mat-menu #vertebrates="matMenu">
+  <ng-template matMenuContent>
+    <button mat-menu-item *ngFor="let rate of playbackRates; let index = index"
+            [class.selected]="selectedPlaybackRate === index" (click)="setPlaybackRate(rate, index)">{{rate === 1 ? 'Normal' : rate}}</button>
+  </ng-template>
+  <!--  <button mat-menu-item (click)="setPlaybackRate(0.25)">0.25</button>
+    <button mat-menu-item (click)="setPlaybackRate(0.50)">0.50</button>
+    <button mat-menu-item (click)="setPlaybackRate(0.75)">0.75</button>
+    <button mat-menu-item class="selected" (click)="setPlaybackRate(1)">Normal</button>
+    <button mat-menu-item (click)="setPlaybackRate(1.25)">1.25</button>
+    <button mat-menu-item (click)="setPlaybackRate(0.50)">1.50</button>
+    <button mat-menu-item (click)="setPlaybackRate(2)">2</button>-->
+</mat-menu>
+
+<mat-menu #invertebrates="matMenu">
+  <button mat-menu-item *ngFor="let level of hls.levels">
+    {{level.height}}p
+  </button>
+  <button mat-menu-item class="selected">1080p - HD</button>
+  <button mat-menu-item>720p - HD</button>
+  <button mat-menu-item>576p</button>
+  <button mat-menu-item>480p</button>
+  <button mat-menu-item>360p</button>
+  <button mat-menu-item>240p</button>
+  <button mat-menu-item>144p</button>
+</mat-menu>
+
+<mat-menu #audioSource="matMenu">
+  <button mat-menu-item selected>Japonca (Orjinal)</button>
+  <button mat-menu-item>İngilizce</button>
+  <button mat-menu-item>Almanca</button>
+</mat-menu>
+
+<mat-menu #fish="matMenu">
+  <button mat-menu-item>Baikal oilfish</button>
+  <button mat-menu-item>Bala shark</button>
+  <button mat-menu-item>Ballan wrasse</button>
+  <button mat-menu-item>Bamboo shark</button>
+  <button mat-menu-item>Banded killifish</button>
+</mat-menu>
+
+<mat-menu #amphibians="matMenu">
+  <button mat-menu-item>Sonoran desert toad</button>
+  <button mat-menu-item>Western toad</button>
+  <button mat-menu-item>Arroyo toad</button>
+  <button mat-menu-item>Yosemite toad</button>
+</mat-menu>
+
+<mat-menu #reptiles="matMenu">
+  <button mat-menu-item>Banded Day Gecko</button>
+  <button mat-menu-item>Banded Gila Monster</button>
+  <button mat-menu-item>Black Tree Monitor</button>
+  <button mat-menu-item>Blue Spiny Lizard</button>
+  <button mat-menu-item disabled>Velociraptor</button>
+</mat-menu>
+
+<!--
+<div class="fixed-drawer">
+  <app-episodes-popup [postId]="6"></app-episodes-popup>
+</div>
+-->

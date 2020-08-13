@@ -1,0 +1,141 @@
+<mat-toolbar class="mat-elevation-z4">
+  <a mat-icon-button routerLink="/">
+    <mat-icon>arrow_back</mat-icon>
+  </a>
+  <span class="toolbar-title">Ayarlar</span>
+</mat-toolbar>
+
+<div class="settings-page-content">
+
+  <div class="profile-img-wrapper">
+    <div class="profile-img-container">
+      <img class="profile-img" src="https://i.pinimg.com/564x/d6/66/27/d66627ef898ebee0be85cdf2de1c6bdd.jpg">
+      <button mat-icon-button matTooltip="Profil resmini değiştir" (click)="changePhoto()">
+        <mat-icon>photo_camera</mat-icon>
+      </button>
+      <input type="file" #file id="file">
+    </div>
+  </div>
+  <p class="welcome-text">Hoşgeldin, Olcay USTA</p>
+
+  <mat-slide-toggle (change)="selectorTheme($event)">Koyu tema</mat-slide-toggle>
+
+  <mat-accordion>
+    <!-- First name, Last name -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Ad, Soyad</mat-panel-title>
+        <mat-panel-description>Olcay Usta</mat-panel-description>
+      </mat-expansion-panel-header>
+      <form spellcheck="false" class="settings-form" [formGroup]="form">
+        <mat-form-field>
+          <mat-label>Ad</mat-label>
+          <input matInput formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Soyad</mat-label>
+          <input matInput formControlName="lastName">
+        </mat-form-field>
+      </form>
+      <mat-action-row>
+        <button mat-button>İPTAL</button>
+        <button mat-button color="primary" (click)="saveName()">KAYDET</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <!-- Email -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Eposta</mat-panel-title>
+        <mat-panel-description>pikachu@gmail.com</mat-panel-description>
+      </mat-expansion-panel-header>
+      <form spellcheck="false" class="settings-form">
+        <mat-form-field>
+          <mat-label>Eposta</mat-label>
+          <input matInput [formControl]="email">
+        </mat-form-field>
+      </form>
+      <mat-action-row>
+        <button mat-button>İPTAL</button>
+        <button mat-button color="primary" (click)="saveMail()">KAYDET</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <!-- Password -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Şifre</mat-panel-title>
+        <mat-panel-description>******</mat-panel-description>
+      </mat-expansion-panel-header>
+      <form spellcheck="false" class="settings-form">
+        <mat-form-field>
+          <mat-label>Şifre</mat-label>
+          <input matInput [formControl]="password" type="password">
+        </mat-form-field>
+      </form>
+      <mat-action-row>
+        <button mat-button>İPTAL</button>
+        <button mat-button color="primary" (click)="savePassword()">KAYDET</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+  <h4>Oynatma seçenekleri</h4>
+  <mat-accordion>
+
+    <!-- Video quality -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Video kalitesi</mat-panel-title>
+        <mat-panel-description>Otomatik</mat-panel-description>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <!-- Autoplay -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Otomatik oynatma</mat-panel-title>
+        <mat-panel-description>Açık</mat-panel-description>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <!-- Theme -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Tema</mat-panel-title>
+        <mat-panel-description>Varsayılan</mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="themes">
+        <div class="theme-button purple-theme" matRipple role="button">
+          <mat-icon>check</mat-icon>
+        </div>
+        <div class="theme-button orange-theme" role="button"></div>
+        <div class="theme-button blue-theme" role="button"></div>
+        <div class="theme-button black-theme" role="button" (click)="changeTheme('black')"></div>
+      </div>
+
+<!--      <mat-radio-group class="example-radio-group" [(ngModel)]="favoriteTheme">
+        <mat-radio-button class="example-radio-button" *ngFor="let theme of themes" [value]="season">
+          {{theme}}
+        </mat-radio-button>
+      </mat-radio-group>-->
+      <mat-action-row>
+        <button mat-button>İPTAL</button>
+        <button mat-button color="primary">KAYDET</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <h4>Oynatıcı seçenekleri</h4>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Altyazı</mat-panel-title>
+        <mat-panel-description>Orta, beyaz renk</mat-panel-description>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+</div>

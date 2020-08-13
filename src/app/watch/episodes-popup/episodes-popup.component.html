@@ -1,0 +1,59 @@
+<div class="settings-popup dark-theme">
+  <div class="setting-popup-header">
+<!--    <div class="selector" matRipple role="button" [matMenuTriggerFor]="seasonMenu">
+      <span>1.Sezon</span>
+      <mat-icon>arrow_drop_down</mat-icon>
+    </div>-->
+   <mat-form-field floatLabel="never">
+     <mat-label>Sezon</mat-label>
+     <mat-select disableOptionCentering matNativeControl>
+       <mat-option value="option1">1.Sezon</mat-option>
+       <mat-option value="option2">2.Sezon</mat-option>
+       <mat-option value="option3">3.Sezon</mat-option>
+     </mat-select>
+   </mat-form-field>
+  <!--  <span>1.Sezon</span>-->
+    <!--<button mat-button>SEZON 1</button>-->
+    <!-- <mat-form-field floatLabel="never">
+       <mat-label>Sezon</mat-label>
+       <mat-select [(value)]="selected" [disableOptionCentering]="true">
+         <mat-option value="option1">SEZON 1</mat-option>
+         <mat-option value="option2">SEZON 2</mat-option>
+         <mat-option value="option3">SEZON 3</mat-option>
+       </mat-select>
+     </mat-form-field>-->
+  </div>
+  <div class="list-wrapper" *ngIf="episodes">
+
+    <!--    <mat-grid-list cols="1" rowHeight="340px">
+          <mat-grid-tile *ngFor="let episode of episodes">
+            <img [src]="episode.thumbImg">
+            <mat-grid-tile-footer>{{episode.title}}</mat-grid-tile-footer>
+            <mat-progress-bar [value]="20"></mat-progress-bar>
+          </mat-grid-tile>
+        </mat-grid-list>-->
+
+    <div class="grid-list" *ngIf="episodes">
+      <div class="item" *ngFor="let episode of episodes">
+
+          <div matRipple class="image-aspect-ratio">
+            <img [src]="episode.thumbImg">
+            <mat-progress-bar [value]="20"></mat-progress-bar>
+          </div>
+
+        <div class="tile">
+          <div class="title">{{episode.title}}</div>
+         <!-- <div class="subtitle">1 saat 2 dakika</div>-->
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<mat-menu #seasonMenu="matMenu" overlapTrigger class="episode-menu" panelClass="testing">
+  <button mat-menu-item>1.Sezon</button>
+  <button mat-menu-item>2.Sezon</button>
+  <button mat-menu-item>3.Sezon</button>
+</mat-menu>

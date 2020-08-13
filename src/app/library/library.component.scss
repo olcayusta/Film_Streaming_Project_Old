@@ -1,0 +1,55 @@
+.my-library {
+  width: 100rem;
+  margin: 24px auto;
+  padding-top: 128px;
+}
+
+#header {
+  padding: 24px 0;
+}
+
+.section-header {
+  font-size: 48px;
+  line-height: 48px;
+  margin: 0 0 2px 0;
+}
+
+
+.my-favorites {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 24px;
+
+  .details {
+    padding-top: 12px;
+  }
+
+  .title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .metadata {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 4px;
+    color: var(--metadata-color);
+  }
+}
+
+.favorite-item {
+  position: relative;
+  padding-top: 150%;
+}
+
+.img-placeholder {
+  position: absolute;
+  top: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

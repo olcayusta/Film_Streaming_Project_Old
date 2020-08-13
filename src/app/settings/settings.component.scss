@@ -1,0 +1,148 @@
+:host {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 9;
+  overflow: auto;
+}
+
+.toolbar-title {
+  margin-left: 24px;
+}
+
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-radio-button {
+  margin: 8px 0;
+}
+
+.settings-page-content {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 24px;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+.profile-img-wrapper {
+  margin: 0 auto;
+  display: flex;
+  border-radius: 50%;
+}
+
+.profile-img-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  button[mat-icon-button] {
+    position: absolute;
+    color: #fff;
+    opacity: 0;
+  }
+
+  #file {
+    display: none;
+  }
+}
+
+.profile-img-container:hover:before {
+  opacity: 1;
+}
+
+.profile-img-container:hover {
+
+  button[mat-icon-button] {
+    opacity: 1;
+  }
+}
+
+mat-slide-toggle {
+  margin: 24px 0;
+}
+
+.profile-img-container:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.54);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.welcome-text {
+  font-size: 24px;
+  line-height: 32px;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.settings-form {
+  display: flex;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  mat-form-field:first-child {
+    margin-right: 16px;
+  }
+}
+
+.themes {
+  display: flex;
+}
+
+.orange-theme {
+  background-color: #ee0000;
+}
+
+.black-theme {
+  background-color: #111;
+}
+
+.blue-theme {
+  background-color: #0100ee;
+}
+
+.purple-theme {
+  background: #6200ee;
+}
+
+.theme-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-right: 24px;
+  cursor: pointer;
+}

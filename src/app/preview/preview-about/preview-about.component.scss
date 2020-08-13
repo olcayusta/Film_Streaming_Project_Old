@@ -1,0 +1,106 @@
+.img-cover {
+  margin-right: 48px;
+
+  img {
+    width: 364px;
+    display: flex;
+  }
+}
+
+.post-info {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: 32px;
+    line-height: 48px;
+    margin: 0;
+  }
+
+  .rated {
+    // border: 1px solid;
+  }
+
+  .released-year, .time {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+  }
+
+  .chip-small-title {
+    margin-top: 16px;
+  }
+
+  mat-chip-list {
+    display: flex;
+    margin: 0 0 16px 0;
+
+    mat-chip {
+      background-color: #fff;
+      border: 1px solid rgba(0,0,0,.12);
+    }
+  }
+
+  .year:after, .rated:after {
+    content: '•';
+    margin: 0 4px;
+  }
+}
+
+.ratings {
+  display: flex;
+  flex-direction: column;
+
+  .imdb {
+  }
+
+  .rt {
+  }
+}
+
+.small-title {
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: rgba(0,0,0,.54);
+}
+
+.summary {
+  font-size: 13px;
+  line-height: 26px;
+  color: #757575;
+  margin-top: 8px;
+}
+
+.last-episode {
+  margin: 24px 80px;
+  padding-bottom: 80px;
+
+  h1 {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  img {
+    display: flex;
+    width: 640px;
+    height: 360px;
+  }
+}
+
+.preview-page {
+  max-width: 1648px;
+  margin: 0 auto;
+  display: flex;
+  padding: 64px 80px;
+}
+
+.video-placeholder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}

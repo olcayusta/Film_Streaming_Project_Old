@@ -1,0 +1,59 @@
+<div class="list-header">
+  <div class="list-header-text">
+    <h2 class="section-title" lang="tr">İzlemeye devam et</h2>
+  </div>
+  <div class="button-group">
+    <button mat-icon-button matTooltip="Önceki" (click)="back()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Sonraki" (click)="forward()">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
+</div>
+
+<!-- Continue Watching -->
+<div class="continue-watching-items" *ngIf="continueWatchingItems">
+  <div class="overflow">
+    <div class="flex-container">
+      <div class="continue-items-slider">
+        <div class="continue-item" *ngFor="let continueItem of continueWatchingItems; let index = index;">
+          <a class="continue-item-renderer" (click)="launchRipple($event, index)">
+            <div class="img-placeholder">
+              <img class="img lazy" [src]="continueItem.img" alt="" appLazyLoad>
+            </div>
+            <div class="time">22:40</div>
+            <mat-progress-bar [value]="continueItem.progress"></mat-progress-bar>
+            <div class="paper-ripple" matRipple #matRipple></div>
+            <div class="item-overlay-renderer">
+              <div class="play-button-wrapper">
+                <button mat-icon-button class="play-button" (click)="$event.stopPropagation()">
+                  <mat-icon>play_arrow</mat-icon>
+                </button>
+              </div>
+              <button mat-icon-button class="menu-button" [matMenuTriggerFor]="continueMoreMenu" (click)="$event.stopPropagation()">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+            </div>
+          </a>
+          <div class="details">
+            <div class="title">{{continueItem.title}}</div>
+            <div class="subtitle">{{continueItem.subtitle}}</div>
+            <div class="more-options-button">
+              <button mat-icon-button [matMenuTriggerFor]="continueMoreMenu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<mat-menu #continueMoreMenu="matMenu" overlapTrigger>
+  <button mat-menu-item>
+    <mat-icon>remove_circle_outline</mat-icon>
+    <span>İzleme listesinden kaldır</span>
+  </button>
+</mat-menu>

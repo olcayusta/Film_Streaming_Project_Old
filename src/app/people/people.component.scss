@@ -1,0 +1,64 @@
+app-people {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #fff;
+}
+
+.people-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 40px;
+  }
+
+  img {
+    width: 112px;
+    height: 112px;
+    display: flex;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 16px;
+  }
+}
+
+.people-page {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1648px;
+  padding-top: 64px;
+}
+
+.people-page-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.film-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+
+  .film-item img {
+    width: 100%;
+  }
+}
+
+.people-films {
+  padding: 64px 0;
+
+  h1 {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+}

@@ -1,0 +1,36 @@
+<div class="wl-wrapper">
+
+  <div id="header">
+    <h2 class="section-header">Daha sonra izle</h2>
+    <div class="subtitle">Yeni, güzel ve trend videolar</div>
+  </div>
+
+  <div class="items">
+    <div *ngFor="let item of items">
+      <a class="simple-endpoint">
+        <div class="img-renderer">
+          <img [src]="item.poster">
+        </div>
+        <div class="img-overlay-renderer">
+          <div class="background-overlay-renderer"></div>
+          <div class="content">
+            <button mat-icon-button class="menu-button" [matMenuTriggerFor]="moreMenu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </div>
+        </div>
+      </a>
+      <div class="details">
+        <a class="title">{{item.title}}</a>
+        <div class="subtitle">TV-14 • {{item.subtitle}}</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<mat-menu #moreMenu="matMenu">
+  <button mat-menu-item>
+    <mat-icon>remove_circle_outline</mat-icon>
+    <span>Listemden kaldır</span>
+  </button>
+</mat-menu>

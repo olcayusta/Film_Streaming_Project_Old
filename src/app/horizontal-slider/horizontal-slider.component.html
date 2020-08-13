@@ -1,0 +1,33 @@
+<div class="list-header">
+  <div class="list-header-text">
+    <h2 class="section-title" lang="tr">Tavsiye edilen filmler</h2>
+  </div>
+  <div class="button-group">
+    <button mat-icon-button matTooltip="Önceki" (click)="back()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Sonraki" (click)="forward()">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="movies-wrapper">
+  <div class="movies">
+    <div class="flex-container">
+      <div class="slider" [style.transform]="transform">
+        <div class="movie-item" *ngFor="let item of posters">
+          <div class="movie-poster-background" matRipple>
+            <img class="lazy" [src]="item.poster" alt="" appLazyLoad>
+          </div>
+          <div class="details">
+            <div class="title">
+              {{item.title}}
+            </div>
+            <div class="subtitle">R • Film • 2018</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

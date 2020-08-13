@@ -1,0 +1,31 @@
+<div class="list-header">
+  <div class="list-header-text">
+    <h2 class="section-title" lang="tr">Amerikan Pastası Serisinin Tüm Filmleri</h2>
+  </div>
+  <div class="button-group">
+    <button mat-icon-button matTooltip="Önceki">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Sonraki">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="movies" id="movies">
+  <div class="layout-movie-slider">
+    <div class="movie-item" *ngFor="let movie of movies">
+      <div class="thumb-renderer">
+        <div class="img-placeholder">
+          <img [src]="movie.poster" alt="">
+        </div>
+      </div>
+      <div class="details">
+        <div class="title">{{movie.title}}</div>
+        <!--<div class="subtitle">{{movie.releaseDate}}</div>-->
+      </div>
+    </div>
+
+  </div>
+</div>
+

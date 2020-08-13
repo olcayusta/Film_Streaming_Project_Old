@@ -1,0 +1,38 @@
+<div class="search-wrapper">
+
+  <mat-chip-list multiple *ngIf="genres">
+    <mat-chip selectable [value]="genre.id" *ngFor="let genre of genres; let index = index;" (selectionChange)="chipSelection($event)">
+      <span>{{genre.title}}</span>
+    </mat-chip>
+  </mat-chip-list>
+
+  <ng-container *ngIf="posts && posts.length > 0; else spinner">
+    <div class="items">
+      <div class="item" *ngFor="let item of posts">
+        <div class="img-placeholder">
+          <img class="item-poster" [src]="item.poster" [alt]="item.title">
+        </div>
+        <div class="details">
+          <div class="title">
+            <a [routerLink]="['/title', item.id]">{{item.title}}</a>
+          </div>
+          <div class="subtitle">
+            {{item.releaseDate}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+
+<!--<div class="center-spinner">
+  <mat-spinner></mat-spinner>
+</div>-->
+
+<ng-template #spinner>
+  <div class="center-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+

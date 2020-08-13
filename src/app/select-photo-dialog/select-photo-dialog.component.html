@@ -1,0 +1,28 @@
+<h2 mat-dialog-title lang="tr">Profil fotoğrafı seçin</h2>
+<div mat-dialog-content>
+  <div class="welcome-screen" *ngIf="!sanitizingFile">
+    <div class="drag-text" lang="tr">Buraya, bir profil fotoğrafı bırakın</div>
+    <div class="bracket">ya da</div>
+    <button mat-stroked-button (click)="file.click()">BİLGİSAYARINIZDAN BİR FOTOĞRAF SEÇİN</button>
+  </div>
+  <div *ngIf="sanitizingFile" class="preview-container" id="photoWrapper" #photoWrapper (mousedown)="mouseDown($event)"
+       (mouseup)="mouseUp($event)"
+       (mousemove)="mousemove($event)">
+    <!-- <img [src]="sanitizingFile" cdkDrag>-->
+    <div class="read-blob-url preview-background"
+         [style.backgroundImage]="sanitizingFile"
+         [style.backgroundPositionX]="backgroundPositionAxisX + 'px'"
+         [style.backgroundPositionY]="backgroundPositionAxisY + 'px'"></div>
+    <div class="read-blob-url radius-cropped" id="drag"
+         [style.backgroundImage]="sanitizingFile"
+         [style.backgroundPositionX]="backgroundPositionAxisX + 'px'"
+         [style.backgroundPositionY]="backgroundPositionAxisY + 'px'"></div>
+  </div>
+</div>
+<div mat-dialog-actions align="end">
+  <mat-slider></mat-slider>
+  <button mat-button mat-dialog-close>İPTAL</button>
+  <button mat-flat-button [mat-dialog-close]="true" color="primary">PROFİL FOTOĞRAFIM YAP</button>
+</div>
+
+<input type="file" id="file" #file (change)="getFiles($event)">
